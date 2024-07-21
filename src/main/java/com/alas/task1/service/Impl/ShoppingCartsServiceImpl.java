@@ -1,5 +1,6 @@
 package com.alas.task1.service.Impl;
 
+import com.alas.task1.dto.carts.AddProductsToShoppingCartsRequestDto;
 import com.alas.task1.dto.carts.ShoppingCartsRequestDto;
 import com.alas.task1.dto.carts.ShoppingCartsResponseDto;
 import com.alas.task1.exeption.CustomException;
@@ -17,7 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -32,21 +32,28 @@ public class ShoppingCartsServiceImpl implements ShoppingCartsService {
 
 
     @Override
-    public ShoppingCartsResponseDto addProduct(Integer cartId ,List<Integer> productIds) {
-        ShoppingCarts carts = cartsRepository.findById(cartId).orElseThrow(() -> new CustomException("not found"));
-        List<Product> products = productRepository.findAllById(productIds);
-        carts.setProducts(products);
-        return cartsMapper.mapEntityToShoppingCartResponse(carts);
+    public ShoppingCarts addProduct(AddProductsToShoppingCartsRequestDto dto) {
+        ShoppingCarts carts = cartsRepository.findById(dto.getCardId()).orElseThrow(() -> new CustomException("not found"));
+        List<Product> products = productRepository.findAllById(dto.getProductIds());
+        List<Product> cartsProducts = carts.getProducts();
+        cartsProducts.addAll(products);
+        return cartsRepository.save(carts);
     }
 
     @Override
-    public ShoppingCartsResponseDto createCart(ShoppingCartsRequestDto cartsRequestDto) {
-        ShoppingCarts shoppingCarts = cartsMapper.mapShoppingCartyRequestToEntity(cartsRequestDto);
-        return cartsMapper.mapEntityToShoppingCartResponse(cartsRepository.save(shoppingCarts));
+    public ShoppingCarts createCart(ShoppingCartsRequestDto dto) {
+//        ShoppingCarts shoppingCarts = cartsMapper.mapShoppingCartyRequestToEntity(cartsRequestDto);
+        ShoppingCarts shoppingCarts = new ShoppingCarts();
+        shoppingCarts.setName(dto.getName());
+
+        List<Product> productList = productRepository.findAllById(dto.getProductIds());
+        shoppingCarts.setProducts(productList);
+
+        return cartsRepository.save(shoppingCarts);
     }
 
     @Override
-    public void removeProductFromCart(Integer cartId,List<Integer> productId) {
+    public void removeProductFromCart(Integer cartId, List<Integer> productId) {
         ShoppingCarts carts = cartsRepository.findById(cartId).orElseThrow(() -> new CustomException("not found"));
         List<Product> productsToRemove = productRepository.findAllById(productId);
         carts.getProducts().removeAll(productsToRemove);
@@ -58,6 +65,5 @@ public class ShoppingCartsServiceImpl implements ShoppingCartsService {
         ShoppingCarts cart = cartsRepository.findById(cartId).orElseThrow(() -> new CustomException("not found"));
         return cartsMapper.mapEntityToShoppingCartResponse(cart);
     }
-
 
 }

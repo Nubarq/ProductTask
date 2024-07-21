@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  my_app:
+    image: mysql:8.0
+    container_name: mysqlAlas
+    environment:
+      MYSQL_ROOT_PASSWORD: alas
+      MYSQL_DATABASE: alasDb
+      MYSQL_USER: alas
+      MYSQL_PASSWORD: alas
+    ports:
+      - "8890:3306"

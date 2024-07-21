@@ -1,13 +1,16 @@
 package com.alas.task1.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Data
 @Table(name = "shopping_carts")
+@NoArgsConstructor
 public class ShoppingCarts {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "carts_seq")

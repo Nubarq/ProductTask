@@ -6,4 +6,5 @@ import lombok.Data;
 public class ProductRequsetDto {
     private String name;
     private Integer categoryId;
+    private Integer productDetailsId;
 }
