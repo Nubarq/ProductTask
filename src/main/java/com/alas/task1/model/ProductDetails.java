@@ -2,11 +2,14 @@ package com.alas.task1.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "product_details")
+@NoArgsConstructor
 public class ProductDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "details_seq")
