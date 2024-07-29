@@ -2,24 +2,23 @@ logging:
   level:
     root: info
 
-
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:8890/alasDb
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/alasDb
     username: alas
     password: alas
   jpa:
     hibernate:
-      ddl-auto: update
-
-    database: mysql
+      ddl-auto: validate
+    database: postgresql
+    open-in-view: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
 
 url:
   ignore:
     swagger: /v2/api-docs, /webjars/*, /swagger-resources/, /actuator/health, /swagger-ui/index.html, /swagger-ui.html, /app//.{js,html}
-
-
 
 springdoc:
   swagger-ui:
