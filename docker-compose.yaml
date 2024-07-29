@@ -2,12 +2,11 @@ version: '3.8'
 
 services:
   my_app:
-    image: mysql:8.0
-    container_name: mysqlAlas
+    image: postgres:15
+    container_name: postgresAlas
     environment:
-      MYSQL_ROOT_PASSWORD: alas
-      MYSQL_DATABASE: alasDb
-      MYSQL_USER: alas
-      MYSQL_PASSWORD: alas
+      POSTGRES_DB: alasDb
+      POSTGRES_USER: alas
+      POSTGRES_PASSWORD: alas
     ports:
-      - "8890:3306"
+      - "5432:5432"
