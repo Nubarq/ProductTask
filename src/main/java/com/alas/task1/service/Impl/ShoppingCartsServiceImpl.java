@@ -3,7 +3,7 @@ package com.alas.task1.service.Impl;
 import com.alas.task1.dto.carts.AddProductsToShoppingCartsRequestDto;
 import com.alas.task1.dto.carts.ShoppingCartsRequestDto;
 import com.alas.task1.dto.carts.ShoppingCartsResponseDto;
-import com.alas.task1.exeption.CustomException;
+import com.alas.task1.exception.CustomException;
 import com.alas.task1.mapper.ShoppingCartsMapper;
 import com.alas.task1.model.Product;
 import com.alas.task1.model.ShoppingCarts;

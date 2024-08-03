@@ -1,4 +1,4 @@
-package com.alas.task1.exeption;
+package com.alas.task1.exception;
 
 import lombok.Data;
 

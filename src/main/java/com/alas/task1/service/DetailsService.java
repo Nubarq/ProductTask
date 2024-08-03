@@ -1,7 +1,7 @@
 package com.alas.task1.service;
 
-import com.alas.task1.dto.ProductDetails.ProductDetailsRequestDto;
-import com.alas.task1.dto.ProductDetails.ProductDetailsResponseDto;
+import com.alas.task1.dto.productDetails.ProductDetailsRequestDto;
+import com.alas.task1.dto.productDetails.ProductDetailsResponseDto;
 
 public interface DetailsService {
     ProductDetailsResponseDto createProductDetails(ProductDetailsRequestDto detailsRequestDto, Integer productId);

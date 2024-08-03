@@ -1,14 +1,10 @@
 package com.alas.task1.mapper;
 
-import com.alas.task1.dto.Category.CategoryRequestDto;
-import com.alas.task1.dto.Category.CategoryResponseDto;
 import com.alas.task1.dto.carts.ShoppingCartsRequestDto;
 import com.alas.task1.dto.carts.ShoppingCartsResponseDto;
-import com.alas.task1.model.Category;
 import com.alas.task1.model.Product;
 import com.alas.task1.model.ShoppingCarts;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.alas.task1.controller;
 
-import com.alas.task1.dto.Category.CategoryRequestDto;
-import com.alas.task1.dto.Category.CategoryResponseDto;
+import com.alas.task1.dto.category.CategoryRequestDto;
+import com.alas.task1.dto.category.CategoryResponseDto;
 import com.alas.task1.service.CategoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
