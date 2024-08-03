@@ -1,7 +1,6 @@
 logging:
   level:
     root: info
-
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -13,8 +12,16 @@ spring:
       ddl-auto: validate
     database: postgresql
     open-in-view: true
+    show-sql: true
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+
+
 
 url:
   ignore:

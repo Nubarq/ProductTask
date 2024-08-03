@@ -1,7 +1,6 @@
 package com.alas.task1.service.Impl;
 
-import com.alas.task1.dto.Product.ProductRequsetDto;
-import com.alas.task1.dto.Product.ProductResponseDto;
+import com.alas.task1.dto.product.ProductRequestDto;
 import com.alas.task1.mapper.ProductMapper;
 import com.alas.task1.model.Category;
 import com.alas.task1.model.Product;
@@ -27,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
     CategoryRepository categoryRepository;
 
     @Override
-    public Product createProduct(ProductRequsetDto dto) {
+    public Product createProduct(ProductRequestDto dto) {
         Product product = new Product();
         product.setName(dto.getName());
 

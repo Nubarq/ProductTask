@@ -1,10 +1,8 @@
 package com.alas.task1.service.Impl;
 
-import com.alas.task1.dto.Product.ProductRequsetDto;
-import com.alas.task1.dto.Product.ProductResponseDto;
-import com.alas.task1.dto.ProductDetails.ProductDetailsRequestDto;
-import com.alas.task1.dto.ProductDetails.ProductDetailsResponseDto;
-import com.alas.task1.exeption.CustomException;
+import com.alas.task1.dto.productDetails.ProductDetailsRequestDto;
+import com.alas.task1.dto.productDetails.ProductDetailsResponseDto;
+import com.alas.task1.exception.CustomException;
 import com.alas.task1.mapper.DetailsMapper;
 import com.alas.task1.model.Product;
 import com.alas.task1.model.ProductDetails;

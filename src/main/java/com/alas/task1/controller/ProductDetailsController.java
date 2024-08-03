@@ -1,7 +1,7 @@
 package com.alas.task1.controller;
 
-import com.alas.task1.dto.ProductDetails.ProductDetailsRequestDto;
-import com.alas.task1.dto.ProductDetails.ProductDetailsResponseDto;
+import com.alas.task1.dto.productDetails.ProductDetailsRequestDto;
+import com.alas.task1.dto.productDetails.ProductDetailsResponseDto;
 import com.alas.task1.service.DetailsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

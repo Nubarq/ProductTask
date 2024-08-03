@@ -1,4 +1,4 @@
-package com.alas.task1.exeption;
+package com.alas.task1.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

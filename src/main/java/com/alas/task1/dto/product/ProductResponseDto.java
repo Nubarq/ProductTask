@@ -1,4 +1,4 @@
-package com.alas.task1.dto.Product;
+package com.alas.task1.dto.product;
 
 import lombok.Data;
 

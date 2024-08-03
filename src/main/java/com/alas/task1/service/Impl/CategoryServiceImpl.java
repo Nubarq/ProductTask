@@ -1,7 +1,7 @@
 package com.alas.task1.service.Impl;
 
-import com.alas.task1.dto.Category.CategoryRequestDto;
-import com.alas.task1.dto.Category.CategoryResponseDto;
+import com.alas.task1.dto.category.CategoryRequestDto;
+import com.alas.task1.dto.category.CategoryResponseDto;
 import com.alas.task1.mapper.CategoryMapper;
 import com.alas.task1.model.Category;
 import com.alas.task1.repository.CategoryRepository;

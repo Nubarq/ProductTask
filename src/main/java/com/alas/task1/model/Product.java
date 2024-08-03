@@ -2,16 +2,17 @@ package com.alas.task1.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.redis.core.RedisHash;
 
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "product")
 @NoArgsConstructor
+//@RedisHash("product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_seq")
@@ -20,6 +21,17 @@ public class Product {
     private Integer id;
 
     private String name;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", productDetails=" + productDetails +
+                ", category=" + category +
+                ", cartsList=" + cartsList +
+                '}';
+    }
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "product" , fetch = FetchType.LAZY)
     private ProductDetails productDetails;

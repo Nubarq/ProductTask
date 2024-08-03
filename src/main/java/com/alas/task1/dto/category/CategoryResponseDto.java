@@ -1,4 +1,4 @@
-package com.alas.task1.dto.Category;
+package com.alas.task1.dto.category;
 
 import lombok.Data;
 
