@@ -2,7 +2,7 @@
 # That is why we tell node here to use the openjdk image with java 12 as base.
 FROM openjdk:17
 
-
+VOLUME /tmp
 # We use a varibale here as the port is something that can differ on the environment.
 EXPOSE 9090
 
